@@ -39,7 +39,7 @@ public class AtualizarCliente {
 			int linhasAfetadas = stmt.executeUpdate();
 			
 			if (linhasAfetadas > 0) {
-				System.out.println("Cliente atualizado com suceso!");
+				System.out.println("Cliente atualizado com sucesso!");
 			} else {
 				System.out.println("ID de cliente não encontrado");
 			}

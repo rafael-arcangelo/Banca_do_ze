@@ -5,34 +5,29 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class AtualizarFormaPgto {
-
-	public static void atualizar() {
-		String sql = "UPDATE pagamento SET nome = ? WHERE id_pgto = ?";
+public class DeletarFormaPgto {
+	
+	public static void deletar() {
+		String sql = "DELETE FROM pagamento WHERE id_pgto = ?";
 		
 		try (Scanner scanner = new Scanner(System.in);
 			 Connection conn = Conexao.getConnection();
 			 PreparedStatement stmt = conn.prepareStatement(sql)) {
 			
-			System.out.print("Digite o ID da forma de pagamento que deseja alterar: ");
+			System.out.print("Digite o ID da forma de pagamento que deseja deletar: ");
 			int id = Integer.parseInt(scanner.nextLine());
-			
-			System.out.print("Novo nome para a foma de pagamento: ");
-			String nome = scanner.nextLine();
-
-			
-			stmt.setString(1, nome);
-			stmt.setInt(2, id);
+		
+			stmt.setInt(1, id);
 			
 			int linhasAfetadas = stmt.executeUpdate();
 			
 			if (linhasAfetadas > 0) {
-				System.out.println("Forma de pagamento atualizada com sucesso!");
+				System.out.println("Forma de Pagameno deletada com sucesso!");
 			} else {
 				System.out.println("ID da forma de pagamento não encontrado");
 			}
 		} catch (SQLException e) {
-			System.out.println("Erro ao atualizar forma da pagamento");
+			System.out.println("Erro ao deletar forma de pagamento");
 			e.printStackTrace();
 		}
 	}

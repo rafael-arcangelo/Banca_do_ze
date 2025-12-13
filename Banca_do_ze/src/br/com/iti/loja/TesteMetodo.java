@@ -23,6 +23,10 @@ public class TesteMetodo {
 		//AtualizarCliente.atualizar();
 		//AtualizarProduto.atualizar();
 		//AtualizarFormaPgto.atualizar();
+		
+		//DeletarCliente.deletar();
+		//DeletarProduto.deletar();
+		//DeletarFormaPgto.deletar();
 	}
 
 }

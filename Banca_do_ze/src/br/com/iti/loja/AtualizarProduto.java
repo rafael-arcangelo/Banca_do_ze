@@ -38,7 +38,7 @@ public class AtualizarProduto {
 			int linhasAfetadas = stmt.executeUpdate();
 			
 			if (linhasAfetadas > 0) {
-				System.out.println("Produto atualizado com suceso!");
+				System.out.println("Produto atualizado com sucesso!");
 			} else {
 				System.out.println("ID de produto não encontrado");
 			}
