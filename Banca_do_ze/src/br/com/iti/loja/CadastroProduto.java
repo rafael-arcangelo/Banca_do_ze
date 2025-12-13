@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class CadastroProduto {
 
-	public static void main(String[] args) {
+	public static void cadastrar() {
 		String sql = "INSERT INTO produto (produto, descricao, preco_compra, preco_venda) VALUES (?, ?, ?, ?)";
 		
 		try (Scanner scanner = new Scanner(System.in)) {

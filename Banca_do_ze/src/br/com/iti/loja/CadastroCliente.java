@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class CadastroCliente {
 
-	public static void main(String[] args) {
+	public static void cadastrar() {
 		String sql = "INSERT INTO cliente (nome, telefone, email, senha) VALUES (?, ?, ?, ?)";
 		
 		try (Scanner scanner = new Scanner(System.in)) {

@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class CadastroFormaPgto {
 
-	public static void main(String[] args) {
+	public static void cadastrar() {
 		String sql = "INSERT INTO pagamento (nome) VALUES (?)";
 		
 		try (Scanner scanner = new Scanner(System.in)) {
