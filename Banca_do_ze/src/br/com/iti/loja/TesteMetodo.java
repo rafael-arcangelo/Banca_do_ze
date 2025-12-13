@@ -27,6 +27,10 @@ public class TesteMetodo {
 		//DeletarCliente.deletar();
 		//DeletarProduto.deletar();
 		//DeletarFormaPgto.deletar();
+		
+		//ListarTodosCliente.listarTodos();
+		//ListarTodosProduto.listarTodos();
+		//ListarTodosFormaPgto.listarTodos();
 	}
 
 }
