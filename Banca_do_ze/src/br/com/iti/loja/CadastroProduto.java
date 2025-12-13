@@ -7,25 +7,24 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
-
-public class CadastroCliente {
+public class CadastroProduto {
 
 	public static void main(String[] args) {
-		String sql = "INSERT INTO cliente (nome, telefone, email, senha) VALUES (?, ?, ?, ?)";
+		String sql = "INSERT INTO produto (produto, descricao, preco_compra, preco_venda) VALUES (?, ?, ?, ?)";
 		
 		try (Scanner scanner = new Scanner(System.in)) {
 			
-			System.out.print("Nome do cliente: ");
-			String nome = scanner.nextLine();
+			System.out.print("Digite o produto: ");
+			String produto = scanner.nextLine();
 			
-			System.out.print("Telefone do cliente: ");
-			String telefone = scanner.nextLine();
+			System.out.print("Digite uma descrição para o produto: ");
+			String descricao = scanner.nextLine();
 			
-			System.out.print("E-mail do cliente: ");
-			String email = scanner.nextLine();
+			System.out.print("Digite o valor de compra do produto: ");
+			String preco_compra = scanner.nextLine();
 			
-			System.out.print("Senha do cliente: ");
-			String senha = scanner.nextLine();
+			System.out.print("Digite o valor de venda do produto: ");
+			String preco_venda = scanner.nextLine();
 			
 			try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
@@ -33,10 +32,10 @@ public class CadastroCliente {
 				try (Connection conn = Conexao.getConnection();
 					 PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 					
-					stmt.setString(1, nome);
-					stmt.setString(2, telefone);
-					stmt.setString(3, email);
-					stmt.setString(4, senha);
+					stmt.setString(1, produto);
+					stmt.setString(2, descricao);
+					stmt.setString(3, preco_compra);
+					stmt.setString(4, preco_venda);
 					
 					int linhasAfetadas = stmt.executeUpdate();
 					
@@ -44,9 +43,9 @@ public class CadastroCliente {
 						try(ResultSet rs = stmt.getGeneratedKeys()) {
 							if (rs.next()) {
 								int idGerado = rs.getInt(1);
-								System.out.println("Cliente cadastrado com sucesso! ID gerado: " + 	idGerado);
+								System.out.println("Produto cadastrado com sucesso! ID gerado: " + 	idGerado);
 							} else {
-								System.out.println("Cliente cadastrado com sucesso! (erro ao obter ID)");
+								System.out.println("Produto cadastrado com sucesso! (erro ao obter ID)");
 							}
 						}
 					} else {
