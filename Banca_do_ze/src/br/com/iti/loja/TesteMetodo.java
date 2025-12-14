@@ -6,7 +6,8 @@ public class TesteMetodo {
 
 	public static void main(String[] args) {
 		
-		/* Teste da conexão com a base de dados
+		/*
+		//Teste da conexão com a base de dados
 		try {
 			Conexao.getConnection();
 		} catch (SQLException e) {

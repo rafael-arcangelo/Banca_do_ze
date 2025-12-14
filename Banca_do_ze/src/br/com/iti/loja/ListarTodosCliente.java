@@ -14,7 +14,10 @@ public class ListarTodosCliente {
 			 PreparedStatement stmt = conn.prepareStatement(sql);
 			 ResultSet rs = stmt.executeQuery()) {
 			
-			System.out.println("===== LISTA DE CLIENTES =====");
+			System.out.println("========== LISTA DE CLIENTES ==========");
+			System.out.println("");
+			System.out.printf("%-3s | %-25s | %-15s | %-15s%n", "ID", "NOME", "TELEFONE", "E-MAIL");
+			System.out.println("----+---------------------------+-----------------+--------------------");
 			
 			while (rs.next()) {
 				int id = rs.getInt("id_cliente");
@@ -22,7 +25,7 @@ public class ListarTodosCliente {
 				String telefone = rs.getString("telefone");
 				String email = rs.getString("email");
 				
-				System.out.printf("ID: %d | Nome: %s | Telefone: %s | E-mail: %s%n",
+				System.out.printf("%-3d | %-25s | %-15s | %-15s%n",
 						id, nome, telefone, email);
 			}
 				

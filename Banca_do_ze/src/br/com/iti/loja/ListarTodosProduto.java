@@ -14,7 +14,11 @@ public class ListarTodosProduto {
 			 PreparedStatement stmt = conn.prepareStatement(sql);
 			 ResultSet rs = stmt.executeQuery()) {
 			
-			System.out.println("===== LISTA DE PRODUTOS =====");
+			System.out.println("========== LISTA DE PRODUTOS ==========");
+			System.out.println("");
+			System.out.printf("%-3s | %-30s | %-9s | %-9s | %-50s%n",
+							  "ID", "PRODUTO", "R$ COMPRA", "R$ VENDA", "DESCRIÇÃO");
+			System.out.println("----+--------------------------------+-----------+-----------+-------------------------------------------------------------------------");
 			
 			while (rs.next()) {
 				int id = rs.getInt("id_produto");
@@ -23,7 +27,7 @@ public class ListarTodosProduto {
 				String preco_compra = rs.getString("preco_compra");
 				String preco_venda = rs.getString("preco_venda");
 				
-				System.out.printf("ID: %d | Produto: %s | $ Compra: %s | $ Venda: %s | Descrição: %s%n",
+				System.out.printf("%-3d | %-30s | %-9s | %-9s | %-50s%n",
 						id, produto, preco_compra, preco_venda, descricao);
 			}
 				
