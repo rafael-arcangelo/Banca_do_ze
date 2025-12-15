@@ -34,7 +34,7 @@ public class RelProdutoID {
 				String produto = rs.getString("produto");
 				String descricao = rs.getString("descricao");
 				Double preco_compra = rs.getDouble("preco_compra");
-				Double preco_venda = rs.getDOuble("preco_venda");
+				Double preco_venda = rs.getDouble("preco_venda");
 				
 				System.out.printf("%-3d | %-30s | %-9.2f | %-9.2f | %-50s%n",
 						id, produto, preco_compra, preco_venda, descricao);

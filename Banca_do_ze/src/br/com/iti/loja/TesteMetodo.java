@@ -17,27 +17,30 @@ public class TesteMetodo {
 		*/
 		
 		// Teste individuais de métodos
+		
 		//CadastroCliente.cadastro();
-		//CadastroProduto.cadastro();
-		//CadastroFormaPgto.cadastro();
-		
 		//AtualizarCliente.atualizar();
-		//AtualizarProduto.atualizar();
-		//AtualizarFormaPgto.atualizar();
-		
 		//DeletarCliente.deletar();
-		//DeletarProduto.deletar();
-		//DeletarFormaPgto.deletar();
-		
 		//ListarTodosCliente.listarTodos();
-		//ListarTodosProduto.listarTodos();
-		//ListarTodosFormaPgto.listarTodos();
-		
 		//RelClienteNome.relClienteNome();
 		//RelClienteID.relClienteID();
+		
+		//CadastroProduto.cadastro();
+		//AtualizarProduto.atualizar();
+		//DeletarProduto.deletar();
+		//ListarTodosProduto.listarTodos();
 		//RelProdutoID.relProdutoID();
 		//RelProdutoNome.relProdutoNome();
 		
+		//CadastroFormaPgto.cadastro();
+		//AtualizarFormaPgto.atualizar();
+		//DeletarFormaPgto.deletar();
+		//ListarTodosFormaPgto.listarTodos();
+		
+		//Estoque.estoqueInicial();
+		//EstoqueListarTodos.listarTodos();
+		//EstoqueEntrada.entrada();
+		//EstoqueSaida.saida();
 		
 		
 		
