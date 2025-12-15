@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
-public class CadastroProduto {
+public class ProdutoCadastro {
 
 	public static void cadastrar() {
 		String sql = "INSERT INTO produto (produto, descricao, preco_compra, preco_venda) VALUES (?, ?, ?, ?)";

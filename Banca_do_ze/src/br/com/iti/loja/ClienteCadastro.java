@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 
-public class CadastroCliente {
+public class ClienteCadastro {
 
 	public static void cadastrar() {
 		String sql = "INSERT INTO cliente (nome, telefone, email, senha) VALUES (?, ?, ?, ?)";

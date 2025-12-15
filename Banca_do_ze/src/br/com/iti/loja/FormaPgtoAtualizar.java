@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class AtualizarFormaPgto {
+public class FormaPgtoAtualizar {
 
 	public static void atualizar() {
 		String sql = "UPDATE pagamento SET nome = ? WHERE id_pgto = ?";

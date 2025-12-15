@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
-public class CadastroFormaPgto {
+public class FormaPgtoCadastro {
 
 	public static void cadastrar() {
 		String sql = "INSERT INTO pagamento (nome) VALUES (?)";

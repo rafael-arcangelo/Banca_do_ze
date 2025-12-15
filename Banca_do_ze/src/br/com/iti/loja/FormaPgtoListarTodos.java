@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ListarTodosFormaPgto {
+public class FormaPgtoListarTodos {
 	
 	public static void listarTodos() {
 		String sql = "SELECT id_pgto, nome FROM pagamento ORDER BY nome";

@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ListarTodosProduto {
+public class ProdutoListarTodos {
 	
 	public static void listarTodos() {
 		String sql = "SELECT id_produto, produto, descricao, preco_compra, preco_venda FROM produto ORDER BY produto";

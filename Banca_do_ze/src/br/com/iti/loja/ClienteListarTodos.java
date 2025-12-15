@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 
-public class ListarTodosCliente {
+public class ClienteListarTodos {
 	
 	public static void listarTodos() {
 		String sql = "SELECT id_cliente, nome, telefone, email FROM cliente ORDER BY nome";

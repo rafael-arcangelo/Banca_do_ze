@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 
-public class AtualizarCliente {
+public class ClienteAtualizar {
 	
 	public static void atualizar() {
 		String sql = "UPDATE cliente SET nome = ?, telefone = ?, email = ?, senha = ? WHERE id_cliente = ?";

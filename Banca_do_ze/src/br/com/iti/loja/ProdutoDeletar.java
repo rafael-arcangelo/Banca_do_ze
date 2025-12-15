@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class DeletarProduto {
+public class ProdutoDeletar {
 	
 	public static void deletar() {
 		String sql = "DELETE FROM produto WHERE id_produto = ?";

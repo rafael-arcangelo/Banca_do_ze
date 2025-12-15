@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class DeletarFormaPgto {
+public class FormaPgtoDeletar {
 	
 	public static void deletar() {
 		String sql = "DELETE FROM pagamento WHERE id_pgto = ?";

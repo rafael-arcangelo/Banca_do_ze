@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class AtualizarProduto {
+public class ProdutoAtualizar {
 	
 	public static void atualizar() {
 		String sql = "UPDATE produto SET produto = ?, descricao = ?, preco_compra = ?, preco_venda = ? WHERE id_produto = ?";
