@@ -32,6 +32,16 @@ public class TesteMetodo {
 		//ListarTodosCliente.listarTodos();
 		//ListarTodosProduto.listarTodos();
 		//ListarTodosFormaPgto.listarTodos();
+		
+		//RelClienteNome.relClienteNome();
+		//RelClienteID.relClienteID();
+		//RelProdutoID.relProdutoID();
+		//RelProdutoNome.relProdutoNome();
+		
+		
+		
+		
+		
 	}
 
 }

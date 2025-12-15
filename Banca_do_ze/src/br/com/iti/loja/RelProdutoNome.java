@@ -4,18 +4,27 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Scanner;
 
-public class ListarTodosProduto {
+public class RelProdutoNome {
 	
-	public static void listarTodos() {
-		String sql = "SELECT id_produto, produto, descricao, preco_compra, preco_venda FROM produto ORDER BY produto";
+	public static void relProdutoNome() {
+		String sql = "SELECT id_produto, produto, descricao, preco_compra, preco_venda FROM produto WHERE produto LIKE ?";
 		
-		try (Connection conn = Conexao.getConnection();
-			 PreparedStatement stmt = conn.prepareStatement(sql);
-			 ResultSet rs = stmt.executeQuery()) {
+		try (Scanner scanner = new Scanner(System.in);
+			 Connection conn = Conexao.getConnection();
+			 PreparedStatement stmt = conn.prepareStatement(sql)) {
 			
-			System.out.println("========== LISTA DE PRODUTOS ==========");
-			System.out.println("");
+			System.out.print("Digite o produto que deseja buscar: ");
+			String buscaNome = scanner.nextLine();
+			System.out.println();
+			
+			stmt.setString(1, "%"+buscaNome+"%");
+			
+			ResultSet rs = stmt.executeQuery();
+			
+			System.out.println("========== RESULTADO DA BUSCA DE PRODUTOS ==========");
+			System.out.println();
 			System.out.printf("%-3s | %-30s | %-9s | %-9s | %-50s%n",
 							  "ID", "PRODUTO", "R$ COMPRA", "R$ VENDA", "DESCRIÇÃO");
 			System.out.println("----+--------------------------------+-----------+-----------+-------------------------------------------------------------------------");
@@ -32,7 +41,7 @@ public class ListarTodosProduto {
 			}
 				
 		} catch (SQLException e) {
-			System.out.println("Erro ao listar produtos");
+			System.out.println("Erro ao realizar a busca.");
 			e.printStackTrace();
 		}
 	}
