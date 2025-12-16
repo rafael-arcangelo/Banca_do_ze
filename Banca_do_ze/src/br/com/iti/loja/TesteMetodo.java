@@ -46,8 +46,10 @@ public class TesteMetodo {
 		//RelClienteNome.relClienteNome();
 		//RelClienteID.relClienteID();
 		//RelProdutoID.relProdutoID();
-		//RelProdutoNome.relProdutoNome();		
-		
+		//RelProdutoNome.relProdutoNome();
+		//RelEstoqueMinimo.estoqueMinimo();
+		//RelVendaPeriodo.vendasPeriodo();
+		//RelVendaCliente.vendasCliente();
 		
 		
 	}
