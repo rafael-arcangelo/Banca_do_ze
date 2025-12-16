@@ -29,9 +29,11 @@ public class VendaCadastrar {
             if (linhasAfetadas > 0) {
                 try (ResultSet rs = stmt.getGeneratedKeys()) {
                     if (rs.next()) {
-                        int id_venda = rs.getInt(1);
-                        System.out.println("Venda registrada com sucesso!");
-                    }
+                        int idGerado = rs.getInt(1);
+                        System.out.println("Venda registrada com sucesso! ID gerado: " + idGerado);
+                    } else {
+						System.out.println("Cliente cadastrado com sucesso! (erro ao obter ID)");
+					}
                 }
             }
 
