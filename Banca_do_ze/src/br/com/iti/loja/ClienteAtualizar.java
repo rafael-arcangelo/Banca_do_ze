@@ -8,11 +8,10 @@ import java.util.Scanner;
 
 public class ClienteAtualizar {
 	
-	public static void atualizar() {
+	public static void atualizar(Scanner scanner) {
 		String sql = "UPDATE cliente SET nome = ?, telefone = ?, email = ?, senha = ? WHERE id_cliente = ?";
 		
-		try (Scanner scanner = new Scanner(System.in);
-			 Connection conn = Conexao.getConnection();
+		try (Connection conn = Conexao.getConnection();
 			 PreparedStatement stmt = conn.prepareStatement(sql)) {
 			
 			System.out.print("Digite o ID do cliente que deseja alterar: ");

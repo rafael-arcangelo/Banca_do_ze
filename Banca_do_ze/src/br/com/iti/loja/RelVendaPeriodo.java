@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class RelVendaPeriodo {
 	
-	public static void vendasPeriodo() {
+	public static void vendasPeriodo(Scanner scanner) {
 		String sql = "SELECT v.id_venda, v.data_venda, " + 
 							"c.nome AS cliente, " +
 							"p.nome AS pagamento, " +
@@ -21,8 +21,7 @@ public class RelVendaPeriodo {
 					 "WHERE v.data_venda BETWEEN ? AND ? " +
 					 "GROUP BY v.id_venda, v.data_venda, c.nome, p.nome";
 		
-		try (Scanner scanner = new Scanner(System.in);
-			 Connection conn = Conexao.getConnection();
+		try (Connection conn = Conexao.getConnection();
 			 PreparedStatement stmt = conn.prepareStatement(sql)) {
 			
 			System.out.print("Digite a data inicial (YYYY-MM-DD): ");
@@ -49,7 +48,7 @@ public class RelVendaPeriodo {
 				String pgto = rs.getString("pagamento");
 				Double v_total = rs.getDouble("valor_total");
 				
-				System.out.printf("%-3d | %-30s | %-9s | %-9s | %-9.2f%n",
+				System.out.printf("%-3d | %-12s | %-20s | %-10s | %-9.2f%n",
 						id, data_venda, cliente, pgto, v_total);
 			}
 				

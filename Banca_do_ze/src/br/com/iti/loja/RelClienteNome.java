@@ -8,11 +8,10 @@ import java.util.Scanner;
 
 public class RelClienteNome {
 	
-	public static void relClienteNome() {
+	public static void relClienteNome(Scanner scanner) {
 		String sql = "SELECT id_cliente, nome, telefone, email FROM cliente WHERE nome LIKE ?";
 		
-		try (Scanner scanner = new Scanner(System.in);
-			 Connection conn = Conexao.getConnection();
+		try (Connection conn = Conexao.getConnection();
 			 PreparedStatement stmt = conn.prepareStatement(sql)) {
 			
 			System.out.print("Digite o nome do cliente que deseja buscar: ");

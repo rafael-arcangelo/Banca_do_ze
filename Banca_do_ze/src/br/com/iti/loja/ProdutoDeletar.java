@@ -7,11 +7,10 @@ import java.util.Scanner;
 
 public class ProdutoDeletar {
 	
-	public static void deletar() {
+	public static void deletar(Scanner scanner) {
 		String sql = "DELETE FROM produto WHERE id_produto = ?";
 		
-		try (Scanner scanner = new Scanner(System.in);
-			 Connection conn = Conexao.getConnection();
+		try (Connection conn = Conexao.getConnection();
 			 PreparedStatement stmt = conn.prepareStatement(sql)) {
 			
 			System.out.print("Digite o ID do produto que deseja deletar: ");

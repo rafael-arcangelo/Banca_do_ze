@@ -8,12 +8,11 @@ import java.util.Scanner;
 
 public class EstoqueSaida {
 
-    public static void saida() {
+    public static void saida(Scanner scanner) {
         String sqlSaldo = "SELECT quantidade, est_seguro FROM estoque WHERE id_fk_produto = ? ORDER BY id_movimento DESC LIMIT 1";
         String sqlSaida = "INSERT INTO estoque (id_fk_produto, quantidade, entrada, saida, est_seguro, data_movimento) VALUES (?, ?, ?, ?, ?, NOW())";
 
-        try (Scanner scanner = new Scanner(System.in);
-             Connection conn = Conexao.getConnection();
+        try (Connection conn = Conexao.getConnection();
              PreparedStatement stmtSaldo = conn.prepareStatement(sqlSaldo);
              PreparedStatement stmtSaida = conn.prepareStatement(sqlSaida)) {
 
@@ -24,6 +23,7 @@ public class EstoqueSaida {
             int qtdSaida = Integer.parseInt(scanner.nextLine());
 
             stmtSaldo.setInt(1, id_fk_produto);
+            
             ResultSet rs = stmtSaldo.executeQuery();
 
             int saldo = 0;

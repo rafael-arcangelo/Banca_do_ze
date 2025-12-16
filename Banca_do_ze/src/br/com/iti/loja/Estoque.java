@@ -7,11 +7,10 @@ import java.util.Scanner;
 
 public class Estoque {
 
-    public static void estoqueInicial() {
+    public static void estoqueInicial(Scanner scanner) {
         String sql = "INSERT INTO estoque (id_fk_produto, quantidade, entrada, saida, est_seguro) VALUES (?, ?, ?, ?, ?)";
 
-        try (Scanner scanner = new Scanner(System.in);
-             Connection conn = Conexao.getConnection();
+        try (Connection conn = Conexao.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             System.out.print("Digite o ID do produto: ");

@@ -11,8 +11,8 @@ public class EstoqueListarTodos {
 		String sql = "SELECT p.id_produto, p.produto, e.quantidade, e.est_seguro " + 
 					 "FROM produto p " +
 					 "JOIN estoque e ON p.id_produto = e.id_fk_produto " +
-					 "ORDER BY p.id_produto DESC";
-		
+					 "ORDER BY p.produto ASC";
+					 		
 		try (Connection conn = Conexao.getConnection();
 			 PreparedStatement stmt = conn.prepareStatement(sql);
 			 ResultSet rs = stmt.executeQuery()) {

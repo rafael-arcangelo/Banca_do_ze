@@ -8,14 +8,13 @@ import java.util.Scanner;
 
 public class RelEstoqueMinimo {
 	
-	public static void estoqueMinimo() {
+	public static void estoqueMinimo(Scanner scanner) {
 		String sql = "SELECT p.id_produto, p.produto, e.quantidade, e.est_seguro " +
 					 "FROM estoque e " +
 					 "JOIN produto p ON e.id_fk_produto = p.id_produto " +
 					 "WHERE e.quantidade < e.est_seguro";
 		
-		try (Scanner scanner = new Scanner(System.in);
-			 Connection conn = Conexao.getConnection();
+		try (Connection conn = Conexao.getConnection();
 			 PreparedStatement stmt = conn.prepareStatement(sql)) {
 			
 	         ResultSet rs = stmt.executeQuery();
@@ -33,6 +32,7 @@ public class RelEstoqueMinimo {
 				
 				System.out.printf("%-3d | %-30s | %-9d | %-9d",
 						id, produto, est_atual, est_seguro);
+				System.out.println();
 			}
 				
 		} catch (SQLException e) {

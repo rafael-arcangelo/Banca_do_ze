@@ -8,11 +8,10 @@ import java.util.Scanner;
 
 public class RelProdutoNome {
 	
-	public static void relProdutoNome() {
+	public static void relProdutoNome(Scanner scanner) {
 		String sql = "SELECT id_produto, produto, descricao, preco_compra, preco_venda FROM produto WHERE produto LIKE ?";
 		
-		try (Scanner scanner = new Scanner(System.in);
-			 Connection conn = Conexao.getConnection();
+		try (Connection conn = Conexao.getConnection();
 			 PreparedStatement stmt = conn.prepareStatement(sql)) {
 			
 			System.out.print("Digite o produto que deseja buscar: ");

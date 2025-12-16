@@ -8,12 +8,12 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 public class VendaCadastrar {
-	
-    public static void venda() {
+    
+    public static int venda(Scanner scanner) {
         String sql = "INSERT INTO venda (data_venda, id_fk_cliente, id_fk_pgto) VALUES (NOW(), ?, ?)";
+        int idGerado = -1;
         
-        try (Scanner scanner = new Scanner(System.in);
-             Connection conn = Conexao.getConnection();
+        try (Connection conn = Conexao.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             
             System.out.print("Digite o ID do cliente (ou 1 para Venda Balcão): ");
@@ -29,11 +29,9 @@ public class VendaCadastrar {
             if (linhasAfetadas > 0) {
                 try (ResultSet rs = stmt.getGeneratedKeys()) {
                     if (rs.next()) {
-                        int idGerado = rs.getInt(1);
+                        idGerado = rs.getInt(1);
                         System.out.println("Venda registrada com sucesso! ID gerado: " + idGerado);
-                    } else {
-						System.out.println("Cliente cadastrado com sucesso! (erro ao obter ID)");
-					}
+                    }
                 }
             }
 
@@ -41,5 +39,6 @@ public class VendaCadastrar {
             System.out.println("Erro ao registrar venda.");
             e.printStackTrace();
         }
+        return idGerado;
     }
 }

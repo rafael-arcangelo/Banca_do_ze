@@ -8,11 +8,10 @@ import java.util.Scanner;
 
 public class RelClienteID {
 	
-	public static void relClienteID() {
+	public static void relClienteID(Scanner scanner) {
 		String sql = "SELECT id_cliente, nome, telefone, email FROM cliente WHERE id_cliente = ?";
 		
-		try (Scanner scanner = new Scanner(System.in);
-			 Connection conn = Conexao.getConnection();
+		try (Connection conn = Conexao.getConnection();
 			 PreparedStatement stmt = conn.prepareStatement(sql)) {
 			
 			System.out.print("Digite o ID do cliente que deseja buscar: ");

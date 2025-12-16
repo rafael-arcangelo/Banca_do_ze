@@ -18,17 +18,17 @@ public class TesteMetodo {
 		
 		// Teste individuais de métodos
 		
-		//ClienteCadastro.cadastro();
+		//ClienteCadastro.cadastrar();
 		//ClienteAtualizar.atualizar();
 		//ClienteDeletar.deletar();
 		//ClienteListarTodos.listarTodos();
 		
-		//ProdutoCadastro.cadastro();
+		//ProdutoCadastro.cadastrar();
 		//ProdutoAtualizar.atualizar();
 		//ProdutoDeletar.deletar();
 		//ProdutoListarTodos.listarTodos();
 		
-		//FormaPgtoCadastro.cadastro();
+		//FormaPgtoCadastro.cadastrar();
 		//FormaPgtoAtualizar.atualizar();
 		//FormaPgtoDeletar.deletar();
 		//FormaPgtoListarTodos.listarTodos();

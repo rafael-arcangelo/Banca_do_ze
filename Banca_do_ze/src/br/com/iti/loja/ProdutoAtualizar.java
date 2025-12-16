@@ -7,11 +7,10 @@ import java.util.Scanner;
 
 public class ProdutoAtualizar {
 	
-	public static void atualizar() {
+	public static void atualizar(Scanner scanner) {
 		String sql = "UPDATE produto SET produto = ?, descricao = ?, preco_compra = ?, preco_venda = ? WHERE id_produto = ?";
 		
-		try (Scanner scanner = new Scanner(System.in);
-			 Connection conn = Conexao.getConnection();
+		try (Connection conn = Conexao.getConnection();
 			 PreparedStatement stmt = conn.prepareStatement(sql)) {
 			
 			System.out.print("Digite o ID do produto que deseja alterar: ");
