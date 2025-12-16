@@ -18,30 +18,35 @@ public class TesteMetodo {
 		
 		// Teste individuais de métodos
 		
-		//CadastroCliente.cadastro();
-		//AtualizarCliente.atualizar();
-		//DeletarCliente.deletar();
-		//ListarTodosCliente.listarTodos();
-		//RelClienteNome.relClienteNome();
-		//RelClienteID.relClienteID();
+		//ClienteCadastro.cadastro();
+		//ClienteAtualizar.atualizar();
+		//ClienteDeletar.deletar();
+		//ClienteListarTodos.listarTodos();
 		
-		//CadastroProduto.cadastro();
-		//AtualizarProduto.atualizar();
-		//DeletarProduto.deletar();
-		//ListarTodosProduto.listarTodos();
-		//RelProdutoID.relProdutoID();
-		//RelProdutoNome.relProdutoNome();
+		//ProdutoCadastro.cadastro();
+		//ProdutoAtualizar.atualizar();
+		//ProdutoDeletar.deletar();
+		//ProdutoListarTodos.listarTodos();
 		
-		//CadastroFormaPgto.cadastro();
-		//AtualizarFormaPgto.atualizar();
-		//DeletarFormaPgto.deletar();
-		//ListarTodosFormaPgto.listarTodos();
+		//FormaPgtoCadastro.cadastro();
+		//FormaPgtoAtualizar.atualizar();
+		//FormaPgtoDeletar.deletar();
+		//FormaPgtoListarTodos.listarTodos();
 		
 		//Estoque.estoqueInicial();
 		//EstoqueListarTodos.listarTodos();
 		//EstoqueEntrada.entrada();
 		//EstoqueSaida.saida();
 		
+		//VendaCadastrar.venda();
+		//VendaItens.cadastrarItens(0);
+		//VendaListar.listarVenda();
+		//VendaListarTodos.listarTodas();
+		
+		//RelClienteNome.relClienteNome();
+		//RelClienteID.relClienteID();
+		//RelProdutoID.relProdutoID();
+		//RelProdutoNome.relProdutoNome();		
 		
 		
 		
