@@ -43,6 +43,8 @@ public class VendaItens {
             }
 
             System.out.println("Cadastro de itens finalizado.");
+            VendaListar.listarVenda(idVenda);
+            System.out.println();
 
         } catch (SQLException e) {
             System.out.println("Erro ao registrar item.");

@@ -40,7 +40,7 @@ public class TesteMetodo {
 		
 		//VendaCadastrar.venda();
 		//VendaItens.cadastrarItens(0);
-		//VendaListar.listarVenda();
+		//VendaListar.listarVenda(3);
 		//VendaListarTodos.listarTodas();
 		
 		//RelClienteNome.relClienteNome();

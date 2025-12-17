@@ -184,6 +184,8 @@ public class MenuPrincipal {
             System.out.println("1 - Relatório de Vendas por Período");
             System.out.println("2 - Relatório de Vendas por Cliente");
             System.out.println("3 - Relatório de Estoque Baixo");
+            System.out.println("4 - Relatório detalhado de venda");
+            System.out.println("5 - Relatório de Todas as Vendas");
             System.out.println("0 - Voltar");
             System.out.print("Escolha uma opção: ");
             
@@ -201,6 +203,14 @@ public class MenuPrincipal {
                 case 3:
                     System.out.println();
                     RelEstoqueMinimo.estoqueMinimo(scanner);
+                    break;
+                case 4:
+                	System.out.println();
+                	VendaDetalhe.detalhar(scanner);
+                	break;
+                case 5:
+                    System.out.println();
+                    VendaListarTodos.listarTodas();
                     break;
                 case 0:
                     System.out.println();
