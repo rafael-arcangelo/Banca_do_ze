@@ -15,18 +15,15 @@ public class Conexao {
             Class.forName("com.mysql.cj.jdbc.Driver");
             
             Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
-            System.out.println("Conectado ao banco de dados com sucesso");
             return conn;
             
         } catch (ClassNotFoundException e) {
-        	System.out.println("Driver do MySql não encontrado. Verifique o Build Path");
-        	e.printStackTrace();
-        	return null;
+        	throw new RuntimeException("Driver do MySQL não encontrado. Verifique o Build Path.", e);
+
         
         } catch (SQLException e) {
-        	System.out.println("Erro ao conectar ao banco de dados");
-        	e.printStackTrace();
-        	return null;
+        	throw new RuntimeException("Erro ao conectar ao banco de dados.", e);
+
         }
     }
 }

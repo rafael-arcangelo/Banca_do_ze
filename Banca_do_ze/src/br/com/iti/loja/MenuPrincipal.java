@@ -8,84 +8,83 @@ public class MenuPrincipal {
         Scanner scanner = new Scanner(System.in);
         int opcao;
 
+    	System.out.println();
+    	System.out.println("========== BANCA DO ZÉ ==========");
+        
         do {
         	System.out.println();
-        	System.out.println("========== BANCA DO ZÉ ==========");
+        	System.out.println("---- MENU PRINCIPAL ----");
             System.out.println("1 - Clientes");
             System.out.println("2 - Produtos");
             System.out.println("3 - Estoque");
-            System.out.println("4 - Registrar Vendas");
+            System.out.println("4 - Compra e Venda");
             System.out.println("5 - Relatórios");
             System.out.println("0 - Sair");
+            System.out.println();
             System.out.print("Escolha uma opção: ");
-            opcao = Integer.parseInt(scanner.nextLine());
+            
+            opcao = lerOpcao(scanner);
 
             switch (opcao) {
                 case 1:
-                	System.out.println();
                 	menuClientes(scanner);
                     break;
                 case 2:
-                	System.out.println();
                     menuProdutos(scanner);
                     break;
                 case 3:
-                	System.out.println();
-                    menuEstoque(scanner);
+                     menuEstoque(scanner);
                     break;
                 case 4:
-                	System.out.println();
                     menuVendas(scanner);
                     break;
                 case 5:
-                	System.out.println();
                     menuRelatorios(scanner);
                     break;
                 case 0:
-                	System.out.println();
                     System.out.println("Sistema encerrado.");
+                    System.out.println();
+                	System.out.println("========== BANCA DO ZÉ ==========");
                     break;
                 default:
-                	System.out.println();
                     System.out.println("Opção inválida!");
             }
         } while (opcao != 0);
-
-        scanner.close();
     }
 
+    private static int lerOpcao(Scanner scanner) {
+        try {
+            return Integer.parseInt(scanner.nextLine());
+        } catch (NumberFormatException e) {
+            return -1;
+        }
+    }
+    
     private static void menuClientes(Scanner scanner) {
         int opcao;
         do {
             System.out.println();
         	System.out.println("---- MENU CLIENTES ----");
             System.out.println("1 - Cadastrar Cliente");
-            System.out.println("2 - Listar Clientes");
-            System.out.println("3 - Atualizar Cliente");
-            System.out.println("4 - Deletar Cliente");
+            System.out.println("2 - Atualizar Cliente");
+            System.out.println("3 - Deletar Cliente");
             System.out.println("0 - Voltar");
+            System.out.println();
             System.out.print("Escolha uma opção: ");
-            opcao = Integer.parseInt(scanner.nextLine());
-
+            
+            opcao = lerOpcao(scanner);
+            
             switch (opcao) {
                 case 1:
-                    System.out.println();
-                    ClienteCadastro.cadastrar(scanner);
+                    Cliente.cadastrar(scanner);
                     break;
                 case 2:
-                    System.out.println();
-                    ClienteListarTodos.listarTodos();
+                	Cliente.atualizar(scanner);
                     break;
                 case 3:
-                    System.out.println();
-                    ClienteAtualizar.atualizar(scanner);
-                    break;
-                case 4:
-                    System.out.println();
-                    ClienteDeletar.deletar(scanner);
+                	 Cliente.deletar(scanner);
                     break;
                 case 0:
-                    System.out.println();
                     break;
                 default:
                     System.out.println("Opção inválida!");
@@ -99,32 +98,25 @@ public class MenuPrincipal {
             System.out.println();
         	System.out.println("---- MENU PRODUTOS ----");
             System.out.println("1 - Cadastrar Produto");
-            System.out.println("2 - Listar Produtos");
-            System.out.println("3 - Atualizar Produto");
-            System.out.println("4 - Deletar Produto");
+            System.out.println("2 - Atualizar Produto");
+            System.out.println("3 - Deletar Produto");
             System.out.println("0 - Voltar");
+            System.out.println();
             System.out.print("Escolha uma opção: ");
-            opcao = Integer.parseInt(scanner.nextLine());
+            
+            opcao = lerOpcao(scanner);
 
             switch (opcao) {
                 case 1:
-                    System.out.println();
-                    ProdutoCadastro.cadastrar(scanner);
+                    Produto.cadastrar(scanner);
                     break;
                 case 2:
-                    System.out.println();
-                    ProdutoListarTodos.listarTodos();
+                	Produto.atualizar(scanner);
                     break;
                 case 3:
-                    System.out.println();
-                    ProdutoAtualizar.atualizar(scanner);
-                    break;
-                case 4:
-                    System.out.println();
-                    ProdutoDeletar.deletar(scanner);
+                	Produto.deletar(scanner);
                     break;
                 case 0:
-                    System.out.println();
                     break;
                 default:
                     System.out.println("Opção inválida!");
@@ -137,28 +129,22 @@ public class MenuPrincipal {
         do {
             System.out.println();
         	System.out.println("---- MENU ESTOQUE ----");
-            System.out.println("1 - Estoque Inicial");
-            System.out.println("2 - Entrada no Estoque (Compra)");
-            System.out.println("3 - Consultar Estoque Atual");
+            System.out.println("1 - Ajustar Estoque");
+            System.out.println("2 - Consultar Estoque Atual");
             System.out.println("0 - Voltar");
+            System.out.println();
             System.out.print("Escolha uma opção: ");
-            opcao = Integer.parseInt(scanner.nextLine());
+            
+            opcao = lerOpcao(scanner);
 
             switch (opcao) {
                 case 1:
-                    System.out.println();
-                    Estoque.estoqueInicial(scanner);
+                    Estoque.ajustar(scanner);
                     break;
                 case 2:
-                    System.out.println();
-                    EstoqueEntrada.entrada(scanner);
-                    break;
-                case 3:
-                    System.out.println();
-                    EstoqueListarTodos.listarTodos();
+                    Estoque.listarTodos();
                     break;
                 case 0:
-                    System.out.println();
                     break;
                 default:
                     System.out.println("Opção inválida!");
@@ -167,57 +153,104 @@ public class MenuPrincipal {
     }
 
     private static void menuVendas(Scanner scanner) {
-        System.out.println();
-    	System.out.println("---- MENU VENDAS ----");
-        System.out.println("Registrando venda...");
-        int idVenda = VendaCadastrar.venda(scanner);
-        if (idVenda > 0) {
-            VendaItens.cadastrarItens(scanner, idVenda);
-        }
+        int opcao;
+        do {
+            System.out.println();
+            System.out.println("---- MENU COMPRA / VENDA ----");
+            System.out.println("1 - Registrar COMPRA (Entrada no Estoque)");
+            System.out.println("2 - Registrar VENDA (Saída do Estoque)");
+            System.out.println("0 - Voltar");
+            System.out.print("Escolha uma opção: ");
+
+            try {
+                opcao = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException ex) {
+                System.out.println("Opção inválida. Digite um número.");
+                opcao = -1;
+            }
+
+            switch (opcao) {
+                case 1:
+                    Estoque.entrada(scanner);
+                    break;
+                case 2:
+                    System.out.println();
+                    System.out.println("Registrando venda...");
+                    int idVenda = Venda.venda(scanner);
+                    if (idVenda > 0) {
+                        Venda.cadastrarItens(scanner, idVenda);
+                    }
+                    break;
+                case 0:
+                    System.out.println("Voltando ao menu principal...");
+                    break;
+                default:
+                    System.out.println("Opção inválida!");
+            }
+
+        } while (opcao != 0);
     }
 
     private static void menuRelatorios(Scanner scanner) {
         int opcao;
         do {
-        	System.out.println();
+            System.out.println();
             System.out.println("---- MENU RELATÓRIOS ----");
-            System.out.println("1 - Relatório de Vendas por Período");
-            System.out.println("2 - Relatório de Vendas por Cliente");
-            System.out.println("3 - Relatório de Estoque Baixo");
-            System.out.println("4 - Relatório detalhado de venda");
-            System.out.println("5 - Relatório de Todas as Vendas");
+            System.out.println("1 - Listar todos os Clientes");
+            System.out.println("2 - Listar todos os Produtos");
+            System.out.println("3 - Estoque Atual");
+            System.out.println("4 - Estoque abaixo do mínimo");
+            System.out.println("5 - Listar Formas de Pagamento");
+            System.out.println("6 - Vendas por Cliente");
+            System.out.println("7 - Vendas por Período");
+            System.out.println("8 - Vendas Gerais");
+            System.out.println("9 - Produtos mais vendidos");
             System.out.println("0 - Voltar");
+            System.out.println();
             System.out.print("Escolha uma opção: ");
-            
-            opcao = Integer.parseInt(scanner.nextLine());
-            
+
+            try {
+                opcao = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException ex) {
+                System.out.println("Opção inválida. Digite um número.");
+                opcao = -1;
+            }
+
             switch (opcao) {
                 case 1:
-                    System.out.println();
-                    RelVendaPeriodo.vendasPeriodo(scanner);
+                    Cliente.listarTodos();
                     break;
                 case 2:
-                    System.out.println();
-                    RelVendaCliente.vendasCliente(scanner);
+                    Produto.listarTodos();
                     break;
                 case 3:
-                    System.out.println();
-                    RelEstoqueMinimo.estoqueMinimo(scanner);
+                    Estoque.listarTodos();
                     break;
                 case 4:
-                	System.out.println();
-                	VendaDetalhe.detalhar(scanner);
-                	break;
+                    Relatorio.estoqueMinimo(scanner);
+                    break;
                 case 5:
-                    System.out.println();
-                    VendaListarTodos.listarTodas();
+                    Relatorio.pgtoListarTodos();
+                    break;
+                case 6:
+                    Relatorio.vendasCliente(scanner);
+                    break;
+                case 7:
+                    Relatorio.vendasPeriodo(scanner);
+                    break;
+                case 8:
+                    Venda.listarTodas();
+                    break;
+                case 9:
+                    Relatorio.produtosMaisVendidos(scanner);
                     break;
                 case 0:
-                    System.out.println();
+                    System.out.println("Voltando ao menu principal...");
                     break;
                 default:
                     System.out.println("Opção inválida!");
             }
+
         } while (opcao != 0);
     }
 }
