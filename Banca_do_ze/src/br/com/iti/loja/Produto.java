@@ -179,7 +179,8 @@ public class Produto {
             }
         } catch (SQLException e) {
         	System.out.println();
-            System.out.println("Erro ao deletar produto: " + e.getMessage());
+            System.out.println("Erro ao deletar produto. Já possui venda cadastrada");
+            System.out.println(e.getMessage());
         }
     }
 
