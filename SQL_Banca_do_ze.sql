@@ -3,7 +3,6 @@ CREATE TABLE cliente (
   nome VARCHAR(100) NOT NULL,
   telefone VARCHAR(30),
   email VARCHAR(50),
-  senha VARCHAR(20)
 );
  
 CREATE TABLE produto (
